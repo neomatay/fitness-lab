@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+    margin: 0;
+    min-height: 100vh;
+  }
+  .dark body {
+    @apply bg-bg-dark text-ink-dark;
+  }
+  /* 数字等宽对齐 */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card dark:bg-card-dark rounded-card p-5 border border-line dark:border-line-dark;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+  .dark .card {
+    box-shadow: 0 0 0 1px rgba(201, 168, 106, 0.04), 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+  .btn {
+    @apply rounded-btn px-4 py-2 font-medium transition-colors;
+  }
+  .btn-primary {
+    @apply bg-gold dark:bg-gold-dark text-bg-dark dark:text-bg hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply border border-line dark:border-line-dark text-ink dark:text-ink-dark hover:bg-black/5 dark:hover:bg-white/5;
+  }
+  .input {
+    @apply w-full bg-transparent border border-line dark:border-line-dark rounded-btn px-3 py-2 text-ink dark:text-ink-dark focus:outline-none focus:border-gold dark:focus:border-gold-dark transition-colors;
+  }
+  .label {
+    @apply text-sm text-muted dark:text-muted-dark mb-1 block;
+  }
+  .chip {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+}

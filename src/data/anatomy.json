@@ -1,0 +1,194 @@
+{
+  "jointActions": [
+    {
+      "joint": "肩关节",
+      "action": "屈",
+      "description": "大臂：后→前",
+      "example": "前平举",
+      "muscles": [
+        "肩前束",
+        "上胸1",
+        "肱二头肌"
+      ]
+    },
+    {
+      "joint": "肩关节",
+      "action": "伸",
+      "description": "大臂：前→后",
+      "example": "直臂下压",
+      "muscles": [
+        "背阔肌",
+        "大圆肌",
+        "肩后束",
+        "肱三头肌长头2",
+        "下胸3"
+      ]
+    },
+    {
+      "joint": "肩关节",
+      "action": "外展",
+      "description": "大臂：内→外",
+      "example": "侧平举",
+      "muscles": [
+        "肩中束",
+        "冈上肌",
+        "肱二头肌长头4"
+      ]
+    },
+    {
+      "joint": "肩关节",
+      "action": "内收",
+      "description": "大臂：外→内",
+      "example": "龙门架下夹胸",
+      "muscles": [
+        "背阔肌",
+        "大圆肌",
+        "下胸中胸5"
+      ]
+    },
+    {
+      "joint": "肩关节",
+      "action": "水平外展",
+      "description": "大臂：在水平面，内→外",
+      "example": "蝴蝶机反向飞鸟",
+      "muscles": [
+        "肩后束",
+        "冈下肌"
+      ]
+    },
+    {
+      "joint": "肩关节",
+      "action": "水平内收",
+      "description": "大臂：在水平面，外→内",
+      "example": "蝴蝶机夹胸",
+      "muscles": [
+        "上胸中胸",
+        "肩前束"
+      ]
+    },
+    {
+      "joint": "肘关节",
+      "action": "屈",
+      "description": "肘关节：打直→折叠",
+      "example": "弯举",
+      "muscles": [
+        "肱二头肌",
+        "肱肌",
+        "肱桡肌"
+      ]
+    },
+    {
+      "joint": "肘关节",
+      "action": "伸",
+      "description": "肘关节：折叠→打直",
+      "example": "臂屈伸",
+      "muscles": [
+        "肱三头肌"
+      ]
+    },
+    {
+      "joint": "髋关节",
+      "action": "伸",
+      "description": "髋关节：折叠→打直",
+      "example": "龙门架绳索后踢",
+      "muscles": [
+        "腘绳肌",
+        "臀大肌"
+      ]
+    },
+    {
+      "joint": "膝关节",
+      "action": "屈",
+      "description": "膝关节：打直→折叠",
+      "example": "器械腿弯举",
+      "muscles": [
+        "腘绳肌",
+        "腓肠肌"
+      ]
+    },
+    {
+      "joint": "膝关节",
+      "action": "伸",
+      "description": "膝关节：折叠→打直",
+      "example": "器械腿屈伸",
+      "muscles": [
+        "股四头肌"
+      ]
+    },
+    {
+      "joint": "踝关节",
+      "action": "足跖屈",
+      "description": "足背与小腿：折叠→打直",
+      "example": "提踵",
+      "muscles": [
+        "腓肠肌",
+        "比目鱼肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "上提",
+      "description": "肩胛骨：耸肩",
+      "example": "肩关节动作都会导致 / 肩胛骨发生跟随活动 / 但除了两个健身动作外 / ①耸肩②后缩肩胛骨划船 / 就没有专门为肩胛骨活动而设计的健身动作了 / 所以这里就不举例动作了",
+      "muscles": [
+        "上斜方肌",
+        "菱形肌",
+        "肩胛提肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "下沉",
+      "description": "肩胛骨：沉肩",
+      "example": null,
+      "muscles": [
+        "下斜方肌",
+        "背阔肌",
+        "胸小肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "外展",
+      "description": "肩胛骨：前引",
+      "example": null,
+      "muscles": [
+        "前锯肌",
+        "胸小肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "内收",
+      "description": "肩胛骨：后缩",
+      "example": null,
+      "muscles": [
+        "中斜方肌",
+        "下斜方肌",
+        "菱形肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "上旋",
+      "description": "肩胛骨：抬手时向外旋",
+      "example": null,
+      "muscles": [
+        "上斜方肌",
+        "下斜方肌",
+        "前锯肌"
+      ]
+    },
+    {
+      "joint": "肩胛骨 / （不用掌握）",
+      "action": "下旋",
+      "description": "肩胛骨：落手时向内旋",
+      "example": null,
+      "muscles": [
+        "菱形肌",
+        "肩胛提肌",
+        "胸小肌"
+      ]
+    }
+  ]
+}
