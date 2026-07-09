@@ -10,3 +10,6 @@ dist-ssr
 # OMC 工具状态文件
 .omc/
 **/.omc/
+
+# TypeScript 增量构建缓存
+*.tsbuildinfo
