@@ -11,11 +11,6 @@ export default defineConfig(({ mode }) => ({
     port: 5173,
     host: true, // 允许手机局域网访问
   },
-  resolve: {
-    alias: {
-      '@': '/src',
-    },
-  },
   test: {
     environment: 'node',
     include: ['src/**/*.test.ts'],
