@@ -4,16 +4,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  # 允许手动触发
   workflow_dispatch:
 
-# GitHub Pages 部署所需权限
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 同一时间只跑一个部署
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -23,19 +20,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: 安装依赖
-        run: npm install
-      - name: 诊断（版本与关键依赖）
+          cache: pnpm
+      - name: 诊断（环境版本）
         run: |
           echo "node: $(node -v)"
+          echo "pnpm: $(pnpm -v)"
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+      - name: 诊断（关键依赖）
+        run: |
           echo "tsc: $(npx tsc --version)"
-          ls node_modules/zustand/package.json && echo "zustand ✓" || echo "zustand ✗"
-          ls node_modules/@types/react/package.json && echo "@types/react ✓" || echo "@types/react ✗"
+          test -f node_modules/zustand/package.json && echo "zustand ✓" || echo "zustand ✗"
+          test -f node_modules/@types/react/package.json && echo "@types/react ✓" || echo "@types/react ✗"
       - name: 构建
-        run: npm run build
+        run: pnpm run build
       - name: 上传构建产物
         uses: actions/upload-pages-artifact@v3
         with:
