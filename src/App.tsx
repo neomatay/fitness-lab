@@ -39,9 +39,9 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-dvh flex flex-col">
       {!isOnboarding && (
-        <header className="sticky top-0 z-20 backdrop-blur-md bg-bg/80 dark:bg-bg-dark/80 border-b border-line dark:border-line-dark">
+        <header className="shrink-0 z-20 backdrop-blur-md bg-bg/80 dark:bg-bg-dark/80 border-b border-line dark:border-line-dark">
           <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-lg">⚡</span>
@@ -76,27 +76,31 @@ export default function App() {
         </header>
       )}
 
-      {/* 主内容 */}
-      <main className={`flex-1 max-w-5xl w-full mx-auto px-4 py-6 ${!isOnboarding ? 'pb-24 md:pb-6' : ''}`}>
-        <Routes>
-          <Route path="/onboarding" element={<OnboardingPage />} />
-          <Route path="/" element={<RequireOnboard><TodayPage /></RequireOnboard>} />
-          <Route path="/plan" element={<RequireOnboard><DietPage /></RequireOnboard>} />
-          <Route path="/library" element={<RequireOnboard><LibraryPage /></RequireOnboard>} />
-          <Route path="/library/food" element={<RequireOnboard><FoodPage /></RequireOnboard>} />
-          <Route path="/library/training" element={<RequireOnboard><TrainingPage /></RequireOnboard>} />
-          <Route path="/library/qa" element={<RequireOnboard><QAPage /></RequireOnboard>} />
-          <Route path="/library/gallery" element={<RequireOnboard><GalleryPage /></RequireOnboard>} />
-          <Route path="/tools/cardio" element={<RequireOnboard><CardioPage /></RequireOnboard>} />
-          <Route path="/tools/1rm" element={<RequireOnboard><OneRMPage /></RequireOnboard>} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-        {!isOnboarding && <Attribution />}
+      {/* 主内容：只有这一块滚动 */}
+      <main className="flex-1 min-h-0 overflow-y-auto">
+        <div className="max-w-5xl w-full mx-auto px-4 py-6">
+          <Routes>
+            <Route path="/onboarding" element={<OnboardingPage />} />
+            <Route path="/" element={<RequireOnboard><TodayPage /></RequireOnboard>} />
+            <Route path="/plan" element={<RequireOnboard><DietPage /></RequireOnboard>} />
+            <Route path="/library" element={<RequireOnboard><LibraryPage /></RequireOnboard>} />
+            <Route path="/library/food" element={<RequireOnboard><FoodPage /></RequireOnboard>} />
+            <Route path="/library/training" element={<RequireOnboard><TrainingPage /></RequireOnboard>} />
+            <Route path="/library/qa" element={<RequireOnboard><QAPage /></RequireOnboard>} />
+            <Route path="/library/gallery" element={<RequireOnboard><GalleryPage /></RequireOnboard>} />
+            <Route path="/tools/cardio" element={<RequireOnboard><CardioPage /></RequireOnboard>} />
+            <Route path="/tools/1rm" element={<RequireOnboard><OneRMPage /></RequireOnboard>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
       </main>
 
-      {/* 移动端底部 Tab */}
+      {/* 致谢页脚：常驻底部，不随内容滚动 */}
+      <Attribution />
+
+      {/* 移动端底部 Tab：常驻底部，不滚动 */}
       {!isOnboarding && (
-        <nav className="md:hidden fixed bottom-0 inset-x-0 z-20 backdrop-blur-md bg-bg/90 dark:bg-bg-dark/90 border-t border-line dark:border-line-dark">
+        <nav className="md:hidden shrink-0 z-20 backdrop-blur-md bg-bg/90 dark:bg-bg-dark/90 border-t border-line dark:border-line-dark">
           <div className="grid grid-cols-3">
             {NAV.map((n) => (
               <NavLink
