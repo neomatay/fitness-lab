@@ -11,6 +11,7 @@ import { QAPage } from './pages/QA';
 import { GalleryPage } from './pages/Gallery';
 import { CardioPage } from './pages/Cardio';
 import { OneRMPage } from './pages/OneRM';
+import { Attribution } from './components/Attribution';
 
 // 一级导航：今日 / 方案 / 查阅
 const NAV = [
@@ -90,6 +91,7 @@ export default function App() {
           <Route path="/tools/1rm" element={<RequireOnboard><OneRMPage /></RequireOnboard>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        {!isOnboarding && <Attribution />}
       </main>
 
       {/* 移动端底部 Tab */}
