@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import exercises from '../data/exercises.json';
 import mediaAssets from '../data/mediaAssets.json';
+import { publicAssetUrl } from '../lib/publicAsset';
 import { Card, SectionTitle, Chip, COLORS, PageHeader } from '../components/ui';
 
 const PLANS = ['三分化', '四分化肩单练', '四分化臂单练', '居家'] as const;
@@ -24,7 +25,7 @@ const DAY_IMAGE_HINTS = [
 function imageForDay(day: string) {
   const hint = DAY_IMAGE_HINTS.find((item) => item.match.some((word) => day.includes(word))) ?? DAY_IMAGE_HINTS[0];
   const asset = mediaAssets.find((item) => item.name === hint.asset) ?? mediaAssets.find((item) => item.category === 'anatomy');
-  return { src: asset?.path ?? '', title: hint.title };
+  return { src: asset ? publicAssetUrl(asset.path) : '', title: hint.title };
 }
 
 function jointTags(exercise: (typeof exercises)[number]) {
@@ -148,7 +149,7 @@ export function TrainingPage() {
             .map((asset) => (
               <img
                 key={asset.path}
-                src={asset.path}
+                src={publicAssetUrl(asset.path)}
                 alt=""
                 className="w-full aspect-[4/3] object-contain rounded-btn bg-white border border-line dark:border-line-dark"
               />

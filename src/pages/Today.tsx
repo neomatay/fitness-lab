@@ -6,6 +6,7 @@ import { cardioDailyForDiet } from '../lib/cardio';
 import { suggestMealFoods, type MealType } from '../lib/mealFoods';
 import exercises from '../data/exercises.json';
 import mediaAssets from '../data/mediaAssets.json';
+import { publicAssetUrl } from '../lib/publicAsset';
 import { Card, Metric, SectionTitle, COLORS } from '../components/ui';
 import { DualRing } from '../components/DualRing';
 import { NutrientDonut } from '../components/Donut';
@@ -31,7 +32,7 @@ function imageForPart(part: string): string {
   const hint = PART_IMAGE_HINTS.find((h) => h.match.some((w) => part.includes(w)));
   if (!hint) return '';
   const asset = mediaAssets.find((a) => a.name === hint.asset);
-  return asset?.path ?? '';
+  return asset ? publicAssetUrl(asset.path) : '';
 }
 
 function parseMealName(meal: string): string {

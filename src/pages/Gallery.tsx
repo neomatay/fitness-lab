@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import anatomy from '../data/anatomy.json';
 import mediaAssets from '../data/mediaAssets.json';
+import { publicAssetUrl } from '../lib/publicAsset';
 import { Card, Chip, COLORS, SectionTitle, PageHeader } from '../components/ui';
 
 type Filter = '全部' | '拉伸' | '解剖图示';
@@ -74,7 +75,7 @@ export function GalleryPage() {
           <Card className="!p-3">
             {preview ? (
               <img
-                src={preview}
+                src={publicAssetUrl(preview)}
                 alt=""
                 className="w-full rounded-card border border-line dark:border-line-dark bg-white object-contain max-h-[620px]"
               />
@@ -92,7 +93,11 @@ export function GalleryPage() {
                   preview === asset.path ? 'ring-2 ring-gold dark:ring-gold-dark' : ''
                 }`}
               >
-                <img src={asset.path} alt="" className="w-full aspect-[4/3] object-contain bg-white rounded-btn" />
+                <img
+                  src={publicAssetUrl(asset.path)}
+                  alt=""
+                  className="w-full aspect-[4/3] object-contain bg-white rounded-btn"
+                />
                 <div className="px-2 py-2">
                   <div className="text-sm font-bold">{prettyName(asset.name, index)}</div>
                   <div className="text-xs text-muted dark:text-muted-dark mt-0.5">
